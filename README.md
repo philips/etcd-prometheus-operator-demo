@@ -64,3 +64,14 @@ kubectl delete pod demo-cluster-0000
 kubectl delete -f https://github.com/philips/etcd-prometheus-operator-demo/blob/master/demo-cluster.yaml
 kubectl delete -f https://raw.githubusercontent.com/philips/etcd-prometheus-operator-demo/master/demo-cluster-monitoring.yaml
 ```
+
+
+## Putting some keys in
+
+```
+kubectl expose pod demo-cluster-0002 --selector='etcd_cluster=demo-cluster' --name=demo-cluster --type=NodePort  -l etcd_cluster=demo-cluster  --target-port 2379
+```
+
+```
+EP=$(minikube service --url demo-cluster); while true; do etcdctl --endpoints ${EP}  put hello etcd; done
+```
