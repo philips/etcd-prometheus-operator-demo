@@ -3,7 +3,7 @@ kind: Prometheus
 metadata:
   name: demo-cluster-prometheus
   labels:
-    prometheus: demo-cluster
+    prometheus: demo-cluster-prometheus
 spec:
   version: v1.3.0
   serviceMonitors:
@@ -24,4 +24,4 @@ spec:
     protocol: TCP
     targetPort: web
   selector:
-    prometheus: demo-cluster
+    prometheus: demo-cluster-prometheus
