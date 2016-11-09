@@ -1,0 +1,21 @@
+apiVersion: "coreos.com/v1"
+kind: "EtcdCluster"
+metadata:
+  name: "demo-cluster"
+spec:
+  size: 3
+  version: "v3.1.0-alpha.1"
+---
+apiVersion: monitoring.coreos.com/v1alpha1
+kind: ServiceMonitor
+metadata:
+  name: demo-cluster
+  labels:
+    etcd_cluster: demo-cluster
+spec:
+  selector:
+    matchLabels:
+      etcd_cluster: demo-cluster
+  endpoints:
+  - port: client
+    interval: 10s

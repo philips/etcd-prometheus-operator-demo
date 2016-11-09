@@ -1,0 +1,27 @@
+apiVersion: monitoring.coreos.com/v1alpha1
+kind: Prometheus
+metadata:
+  name: demo-cluster-prometheus
+  labels:
+    prometheus: demo-cluster
+spec:
+  version: v1.3.0
+  serviceMonitors:
+  - selector:
+      matchLabels:
+        etcd_cluster: demo-cluster
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-cluster-prometheus
+spec:
+  type: NodePort
+  ports:
+  - name: web
+    nodePort: 30100
+    port: 9090
+    protocol: TCP
+    targetPort: web
+  selector:
+    prometheus: demo-cluster
