@@ -2,6 +2,9 @@
 
 Simple demonstration of using etcd and Prometheus operators together.
 
+Pre-requisite:
+- Working [minikube and kubectl](https://github.com/kubernetes/minikube#installation)
+
 ## Deploy Operators
 
 Launch the [etcd Operator](https://coreos.com/blog/introducing-the-etcd-operator.html) and [Prometheus Operator](https://coreos.com/blog/the-prometheus-operator.html) in the cluster.
