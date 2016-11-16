@@ -20,7 +20,7 @@ kubectl create -f https://coreos.com/operators/etcd/latest/deployment.yaml
 Create a three member etcd cluster called "demo-cluster"
 
 ```
-kubectl create -f https://github.com/philips/etcd-prometheus-operator-demo/blob/master/demo-cluster.yaml
+kubectl create -f  https://raw.githubusercontent.com/philips/etcd-prometheus-operator-demo/blob/master/demo-cluster.yaml
 ```
 
 Confirm it is working by finding three pods listed
