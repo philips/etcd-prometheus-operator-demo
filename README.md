@@ -2,6 +2,8 @@
 
 Simple demonstration of using etcd and Prometheus operators together.
 
+[Video demo from KubeCon](https://www.youtube.com/watch?v=Uf7PiHXqmnw&index=80&list=PLj6h78yzYM2PqgIGU1Qmi8nY7dqn9PCr4)
+
 Pre-requisite:
 - Working [minikube and kubectl](https://github.com/kubernetes/minikube#installation)
 
